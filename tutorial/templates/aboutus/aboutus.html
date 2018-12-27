@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="alert alert-primary" role="alert" style="text-align:center;">
+  <div class="row">
+    <div class="col-4">
+      <img src="{% static 'images/aj.png' %}" style="max-width: 100px;" class="rounded-circle">
+    </div>
+    <div class="col">
+      <div class="alert alert-info" role="alert">
+        Ajay Salunkhe
+      </div>
+      <h6>Student of Computer Science.</h6>
+      <div class="alert alert-light" role="alert">
+        <div class="row">
+          <div class="col-4">
+            <a href="https://www.facebook.com/ajay.salunkhe.9484" target="_blank"> <img src="{% static 'images/fb.png' %}" style="width: 25px;"/> </a>
+          </div>
+          <div class="col-4">
+            <a href="https://twitter.com/ajay1salunkhe" target="_blank"> <img src="{% static 'images/twitter.png' %}" style="width: 25px;"/> </a>
+          </div>
+          <div class="col-4">
+            <a href="https://www.youtube.com/channel/UCzYJ_qqCV0hxSFZ-pKcuqjw" target="_blank"> <img src="{% static 'images/youtube2.png' %}" style="width: 25px;"/> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
