@@ -121,14 +121,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-=======
-=======
->>>>>>> 56332f75555e9dad4d6c081b19e1098011fe1e9b
+
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
@@ -138,7 +134,3 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
-<<<<<<< HEAD
->>>>>>> 56332f75555e9dad4d6c081b19e1098011fe1e9b
-=======
->>>>>>> 56332f75555e9dad4d6c081b19e1098011fe1e9b
