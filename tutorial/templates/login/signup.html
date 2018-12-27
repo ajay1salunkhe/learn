@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="jumbotron" style="text-align: center; background-image: url('{% static 'images/bg1.jpg' %}'); background-repeat: repeat-y;repeat; background-position: center; background-size: 100%; width: 100%;">
+    <div style="text-align: center;">
+      <form method="POST" enctype="multipart/form-data" style="max-width: 500px; margin-left:auto; margin-right:auto;">
+        {% csrf_token %}
+        <div class="alert alert-primary" role="alert">
+          Sign Up Here
+        </div>
+        <div class="input-group"  style="margin-bottom: 7px;">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Username : </span>
+          </div>
+           {{ form.username }}
+        </div>
+
+<!--
+        <div class="row"  style="margin-bottom: 7px;">
+          <div class="col"> -->
+            <div class="input-group"  style="margin-bottom: 7px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon2">First Name : </span>
+              </div>
+               {{ form.first_name }}
+            </div>
+<!--          </div>
+          <div class="col"> -->
+            <div class="input-group"  style="margin-bottom: 7px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Last Name : </span>
+              </div>
+               {{ form.last_name }}
+            </div>
+<!--          </div>
+</div> -->
+
+        <div class="input-group"  style="margin-bottom: 7px;">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon4">Email : </span>
+          </div>
+           {{ form.email }}
+        </div>
+
+            <div class="input-group" style="margin-bottom: 7px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon5">Password : </span>
+              </div>
+               {{ form.password1 }}
+            </div>
+
+
+            <div class="input-group" style="margin-bottom: 7px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon6">Confirm Password : </span>
+              </div>
+               {{ form.password2 }}
+            </div>
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+
+        <br>
+        <span style="text-align: center;">
+        </span>
+
+      </form>
+    </div>
+</div>
+
+{% endblock %}
