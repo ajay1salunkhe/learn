@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="container">
+  <div class="row" style="margin: 10px;">
+    <div class="col" style="margin: 5px;">
+        <div class="card" onclick="location.href='{% url 'tutorials' %}';" style="background-image: url(''); background-repeat: no-repeat; background-position: center; background-size: 100%; width: 250px; height: 150px;">
+          <div class="card-body" style="text-align:center;">
+            <a href="{% url 'tutorials' %}">
+              <img src="{% static 'images/cs.png' %}" style="max-width: 80px; margin-bottom: 7px;">
+              <h5 class="card-title">Computer Science</h5>
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

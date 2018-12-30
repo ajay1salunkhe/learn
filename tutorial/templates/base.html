@@ -35,7 +35,7 @@
 <body>
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">AjLearn</a>
+    <a class="navbar-brand" href="{% url 'home' %}">AjLearn</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,7 +46,7 @@
         </li>
         <li class="nav-item">
           <li class="nav-item">
-            <a class="nav-link" href="#">Tutorials</a>
+            <a class="nav-link" href="{% url 'categories' %}">Tutorials</a>
           </li>
           <a class="nav-link disabled" href="#">Aptitude Test</a>
         </li>
@@ -62,6 +62,12 @@
       </ul>
     </div>
   </nav>
+
+  <div class="alert alert-warning" role="alert">
+    <b>NOTE : </b> Webapp is under construction. some links may not work properly.<br>
+    Sorry for any inconvenience.
+  </div>
+
   {% include 'messages.html' %}
 {% block content %}
 {% endblock %}

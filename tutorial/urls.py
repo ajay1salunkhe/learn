@@ -6,5 +6,6 @@ import login.urls
 urlpatterns = [
     path('',views.home,name="home"),
     path('aboutus/',views.aboutus,name="aboutus"),
-    path('tutorials/',views.tutorials,name="tutorials"),
+    path('categories/',views.categories,name="categories"),
+    path('categories/tutorials/',views.tutorials,name="tutorials"),
 ]
