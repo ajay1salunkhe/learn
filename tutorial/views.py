@@ -5,3 +5,6 @@ def	home(request):
 
 def aboutus(request):
     return render(request,	'aboutus/aboutus.html',	{})
+
+def tutorials(request):
+    return render(request,	'tutorial/tutorials.html',	{})
