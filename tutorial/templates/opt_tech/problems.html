@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="alert alert-primary" role="alert">
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="{% static 'images/ot.png' %}" class="rounded mr-2" style="width: 20px;" alt="...">
+      <strong class="mr-auto">Assignment Problem - OT</strong>
+      <small>18-Jan-2019</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      With Hungarian Method
+    </div>
+  </div>
+</div>
+{% endblock %}
