@@ -7,7 +7,7 @@
       Enter Matrix :
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <table class="table table-bordered">
+        <table border="1">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -21,7 +21,7 @@
                 <tr>
                   <th scope="row">R{{r}}</th>
                   {% for x in cols %}
-                    <td><input type="number" id="{{r}}{{x}}" name="{{r}}{{x}}" style="width: 40px;"></td>
+                    <td><center><input type="number" id="{{r}}{{x}}" name="{{r}}{{x}}" style="width: 40px;" min="0"></center></td>
                   {% endfor %}
                 </tr>
               {% endfor %}

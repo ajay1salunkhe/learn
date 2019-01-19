@@ -4,7 +4,63 @@
 <div class="alert alert-primary" role="alert">
     Assignment Problem - by Hungarian Method
     <div class="alert alert-secondary" role="alert">
-      Working On Answer
+      <b>Entered Matrix : </b><br>
+      <table border="1">
+          <thead>
+              <tr>
+                <th scope="col">#</th>
+                {% for c in cols %}
+                <th scope="col">C{{c}}</th>
+                {% endfor %}
+              </tr>
+          </thead>
+
+          <tbody>
+              {% for r in l1 %}
+                <tr>
+                  <th scope="row">R</th>
+                  {% for x in r %}
+                    <td><center>{{ x }}</center></td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+      </table>
+
+      In above matrix the minimum values are:<br>
+      <ol type="1">
+        {% for o in minr %}
+          <li> row min value : {{ o }}</li>
+        {% endfor %}
+      </ol>
+      
+      <b>After row substraction :</b>
+      <table border="1">
+          <thead>
+              <tr>
+                <th scope="col">#</th>
+                {% for c in cols %}
+                <th scope="col">C{{c}}</th>
+                {% endfor %}
+              </tr>
+          </thead>
+
+          <tbody>
+              {% for r in l2 %}
+                <tr>
+                  <th scope="row">R</th>
+                  {% for x in r %}
+                    <td><center>{{ x }}</center></td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+      </table>
+      <br>
+      <div class="alert alert-warning" role="alert">
+        Further calculation is under process
+      </div>
+
     </div>
 </div>
 {% endblock %}
