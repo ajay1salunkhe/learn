@@ -45,6 +45,8 @@ def ass_problem(request):
                 
                 print("l2 = ",l2)
                 print("l1 = ",l1)
+                import sys
+                sys.path.append("numpy_path")
                 messages.success(request,"success")
                 import numpy as np
                 
