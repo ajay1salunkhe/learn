@@ -45,9 +45,9 @@ def ass_problem(request):
                 
                 print("l2 = ",l2)
                 print("l1 = ",l1)
-        
-                import numpy as np
                 messages.success(request,"success")
+                import numpy as np
+                
                 minc=np.min(l2, axis=0)
                 l3 = list(l2-minc)
                 minc  = list(minc)
