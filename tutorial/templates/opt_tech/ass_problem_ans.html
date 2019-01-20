@@ -27,7 +27,7 @@
             </tbody>
       </table>
 
-      In above matrix the minimum values are:<br>
+      In above matrix the minimum values for each row are:<br>
       <ol type="1">
         {% for o in minr %}
           <li> row min value : {{ o }}</li>
@@ -57,6 +57,38 @@
             </tbody>
       </table>
       <br>
+
+      In above matrix the minimum values for each column are:<br>
+      <ol type="1">
+        {% for o in minc %}
+          <li> column min value : {{ o }}</li>
+        {% endfor %}
+      </ol>
+
+      <b>After column substraction :</b>
+      <table border="1">
+          <thead>
+              <tr>
+                <th scope="col">#</th>
+                {% for c in cols %}
+                <th scope="col">C{{c}}</th>
+                {% endfor %}
+              </tr>
+          </thead>
+
+          <tbody>
+              {% for r in l3 %}
+                <tr>
+                  <th scope="row">R</th>
+                  {% for x in r %}
+                    <td><center>{{ x }}</center></td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+      </table>
+      <br>
+
       <div class="alert alert-warning" role="alert">
         Further calculation is under process
       </div>

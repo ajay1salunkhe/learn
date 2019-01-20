@@ -41,7 +41,12 @@ def ass_problem(request):
                 
                 print("l2 = ",l2)
                 print("l1 = ",l1)
-                return render(request, 'opt_tech/ass_problem_ans.html', {"l1":list(l1),"l2":list(l2),"minr":list(minr),"rows":range(1,rows+1),"cols":range(1,cols+1)})  
+                import numpy as np
+                minc=np.min(l2, axis=0)
+                l3 = list(l2-minc)
+                minc = list(minc)
+
+                return render(request, 'opt_tech/ass_problem_ans.html', {"l1":list(l1),"l2":list(l2),"l3":list(l3),"minr":list(minr),"minc":list(minc),"rows":range(1,rows+1),"cols":range(1,cols+1)})  
         except Exception as e:
             print(str(e))
         if form.is_valid():
