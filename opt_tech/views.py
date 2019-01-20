@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RowColForm
 from django.contrib import messages
 
+errorr = ""
 def problems(request):
     return render(request, 'opt_tech/problems.html', {})
 
@@ -48,6 +49,8 @@ def ass_problem(request):
                 return render(request, 'opt_tech/ass_problem_ans.html', {"l1":list(l1),"l2":list(l2),"l3":list(l3),"minr":list(minr),"minc":list(minc),"rows":range(1,rows+1),"cols":range(1,cols+1)})  
         except Exception as e:
             print(str(e))
+            messages.error(request, "Errorr = ",str(e))            
+            errorr = str(e)
         if form.is_valid():
             rows = form.cleaned_data.get('rows')
             cols = form.cleaned_data.get('cols')
