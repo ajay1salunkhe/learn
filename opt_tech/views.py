@@ -45,6 +45,7 @@ def ass_problem(request):
                 
                 print("l2 = ",l2)
                 print("l1 = ",l1)
+                minc=[]
                 '''
                 import sys
                 sys.path.append("numpy_path")
