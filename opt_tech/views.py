@@ -34,7 +34,6 @@ def ass_problem(request):
                     minr.append(min(i))
                 cr=0
                 cc=0
-                print("minr = ",minr)
                 for i in l2:
                     for j in i:
                         print("j = ",j)
@@ -43,18 +42,27 @@ def ass_problem(request):
                     cr=cr+1
                     cc=0
                 
-                print("l2 = ",l2)
-                print("l1 = ",l1)
                 minc=[]
+                l2 =  list(map(list, zip(*l2)))
+                for i in l2:
+                    minc.append(min(i))
+                cr=0
+                cc=0
+                print("l1 = ",l1)
+                print("l2 = ",l2)
+                print("minc = ",minc)
+                l3=deepcopy(l2)
+                for i in l2:
+                    for j in i:
+                        print("j= ",j)
+                        l3[cr][cc] = int(j) - int(minc[cr])
+                        cc=cc+1
+                    cr=cr+1
+                    cc=0
+                print("minc = ",minc)                    
+                l2 =  list(map(list, zip(*l2)))
+                l3 =  list(map(list, zip(*l3)))
                 
-                import sys
-                sys.path.append("numpy_path")
-                messages.success(request,"success")
-                import numpy as np
-                
-                minc=np.min(l2, axis=0)
-                l3 = list(l2-minc)
-                minc  = list(minc)
                 return render(request, 'opt_tech/ass_problem_ans.html', {"l1":list(l1),"l2":list(l2),"l3":list(l3),"minr":list(minr),"minc":list(minc),"rows":range(1,rows+1),"cols":range(1,cols+1)})  
         except Exception as e:
             print(str(e))
