@@ -62,8 +62,28 @@ def ass_problem(request):
                 print("minc = ",minc)                    
                 l2 =  list(map(list, zip(*l2)))
                 l3 =  list(map(list, zip(*l3)))
+                file1=""
+                '''
+                from django.core.files.storage import FileSystemStorage
+                from django.http import HttpResponse
+                from django.template.loader import render_to_string
+
+                from weasyprint import HTML
+                print("hgjhgsjfgsdf  jsgsgjh gfsdfg jhg  ksdf g")
                 
-                return render(request, 'opt_tech/ass_problem_ans.html', {"l1":list(l1),"l2":list(l2),"l3":list(l3),"minr":list(minr),"minc":list(minc),"rows":range(1,rows+1),"cols":range(1,cols+1)})  
+                html_string = render_to_string('opt_tech/ass_problem_ans.html', {"l1":list(l1),"l2":list(l2),"l3":list(l3),"minr":list(minr),"minc":list(minc),"rows":range(1,rows+1),"cols":range(1,cols+1)})  
+                
+                html = HTML(string=html_string)
+                html.write_pdf(target='/tmp/mypdf.pdf');
+                file1=""
+                fs = FileSystemStorage('/tmp')
+                with fs.open('mypdf.pdf') as pdf:
+                    response = HttpResponse(pdf, content_type='application/pdf')
+                    response['Content-Disposition'] = 'attachment; filename="mypdf.pdf"'
+                    return response
+                    file1=response
+                '''
+                return render(request, 'opt_tech/ass_problem_ans.html', {"l1":list(l1),"l2":list(l2),"l3":list(l3),"minr":list(minr),"minc":list(minc),"rows":range(1,rows+1),"cols":range(1,cols+1),"file1":file1})  
         except Exception as e:
             print(str(e))
             messages.error(request, "Errorr = ",str(e)+str(l1)+str(l2)+str(l3))            
