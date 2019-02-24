@@ -62,6 +62,20 @@ def ass_problem(request):
                 print("minc = ",minc)                    
                 l2 =  list(map(list, zip(*l2)))
                 l3 =  list(map(list, zip(*l3)))
+
+                countzero = 0 
+                for i in l3:
+                    for j in i:
+                        if j==0:
+                            countzero = countzero + 1
+                    if countzero==1:
+                         for j in range(len(i)):
+                            if i[j]==0:
+                                i[j]='0'    
+                    countzero=0
+
+                print("l3 = ",l3)    
+
                 file1=""
                 '''
                 from django.core.files.storage import FileSystemStorage

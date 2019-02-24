@@ -81,14 +81,41 @@
                 <tr>
                   <th scope="row">R</th>
                   {% for x in r %}
-                    <td><center>{{ x }}</center></td>
+                      <td><center><div style="">{{ x }}</div></center></td>
                   {% endfor %}
                 </tr>
               {% endfor %}
             </tbody>
       </table>
       <br>
+      <b>then </b>
+      <table border="1">
+          <thead>
+              <tr>
+                <th scope="col">#</th>
+                {% for c in cols %}
+                <th scope="col">C{{c}}</th>
+                {% endfor %}
+              </tr>
+          </thead>
 
+          <tbody>
+              {% for r in l3 %}
+                <tr>
+                  <th scope="row">R</th>
+                  {% for x in r %}
+                    {% ifequal x '0' %}
+                      <td><center><div style="background-color: orange;">{{ x }}</div></center></td>
+                    {% else %}
+                    <!--
+                      <td><center><div style="background-image: url('{% static 'images/cross.png' %}');">{{ x }}</div></center></td> -->
+                      <td><center><div style="">{{ x }}</div></center></td>
+                    {% endifequal %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+      </table>
       <a href="{{ file1 }}" download></a>
 
       <div class="alert alert-warning" role="alert">
