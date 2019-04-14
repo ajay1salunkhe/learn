@@ -14,3 +14,6 @@ def categories(request):
 
 def tutorials(request):
     return render(request,	'tutorial/tutorials.html',	{})
+
+def content(request):
+    return render(request,	'tutorial/content.html',	{})
